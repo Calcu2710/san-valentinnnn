@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Felis San Valentín ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="corazones"></div>
+
+<div id="visor" class="visor oculto" onclick="cerrarVisor()">
+    <div class="visor-contenido" onclick="event.stopPropagation()">
+        <span class="cerrar" onclick="cerrarVisor()">✖</span>
+        <div class="visor-media" id="visor-media"></div>
+        <div class="visor-texto" id="visor-texto"></div>
+        <button class="nav prev" onclick="anterior()">‹</button>
+        <button class="nav next" onclick="siguiente()">›</button>
+    </div>
+</div>
+
+<div id="bienvenida" class="bienvenida oculto"></div>
+
+<header>
+    <h1>💕 Para mi persona más especial 💕</h1>
+    <nav>
+        <a href="momentos.html">📷 Momentos</a>
+        <a href="cartita.html">💌 Cartita</a>
+        <a href="cielos.html">☁️ Cielos</a>
+        <a href="musica.html">🎶 Música</a>
+        <a href="test.html">📝 Test</a>
+    </nav>
+</header>
+
+<section class="seccion">
+    <h2>Nuestros momentos juntos, en los que más feliz soy, y los muchisisisisimos que nos falta por vivir.</h2>
+    <div class="galeria">
+
+        <div class="item" onclick="abrirVisor('img/retiro.jpeg', 'foto', 
+            `18/08/2025 – Que arte Carlitos 🎨<br><br>
+            Aunque nos pareciese una tontería, ese señor nos dio un gran recuerdo.<br><br>
+            No pudimos ir a las barquitas, pero hicimos nuestro pequeño camping. <br><br>
+            Siento que ese día fue el inicio de lo que somos a día de hoy, le guardo mucho cariño.`)">
+            <img src="img/retiro.jpeg">
+        </div>
+
+        <div class="item" onclick="abrirVisor('img/atardecer.jpeg', 'foto', 
+            `01/09/2025 – Viendo el atardecer juntitos 🌤️<br><br>
+            Ese fue para mí uno de los planes más especiales que hicimos cuando empezamos a quedar.<br><br>
+            Primero fuimos a escribir nuestros deseos, para después ir a ver juntitos el atardecer, tan bonito como tú eres. <br><br>
+            Ese día sentí que teníamos una conexión especial que nunca había sentido.`)">
+            <img src="img/atardecer.jpeg">
+        </div>
+
+        <div class="item" onclick="abrirVisor('videos/clio.mp4', 'video', 
+            `10/09/2025 – Los De La Nueva Era 4️⃣9️⃣<br><br>
+            Creo que ese día estuve cerca de que me diese un infarto, el mismísimo Clio supo de mi existencia.<br><br>
+            Viniste conmigo simplemente porque me hacía mucha ilusión, sin importarte realemnte el evento y queriendo verme feliz. <br><br>
+            Estar a tu lado ese día me hizo muy feliz, así que te lo agradezco amor.`)">
+            <video>
+                <source src="videos/clio.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="item" onclick="abrirVisor('videos/flores.mp4', 'video', 
+            `21/09/2025 – Las florecitas amarillas 🌻<br><br>
+            Sabía que te hacía mucha ilusión tener tu ramo de flores amarillas, así que lo tuve claro.<br><br>
+            Estuvimos todo el día juntitos, dando una vueltecita por el rastro y buscando el malvado Action. <br><br>
+            Ver lo feliz que estabas con tu ramo me hizo también muy feliz.`)">
+            <video>
+                <source src="videos/flores.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="item" onclick="abrirVisor('img/atocha.jpeg', 'foto', 
+            `02/10/2025 – Los atocheros 🚉<br><br>
+            Una de esas fotitos en las que salimos como una parejaza, lo que somos.<br><br>
+            De esos días de verano en los que dabamos vueltecitas de chill por el centro, con la mujer más increíble a mi lado.`)">
+            <img src="img/atocha.jpeg">
+        </div>
+
+        <div class="item" onclick="abrirVisor('img/renfe.jpeg', 'foto', 
+            `07/10/2025 – Los renferos 🚆<br><br>
+            Uno de los sitios que más nos gusta, la renfe jej.<br><br>
+            Ese día viniste a verme hasta Leganés para estar un ratito juntos después de clase, me hizo muchita ilusión verte.`)">
+            <img src="img/renfe.jpeg">
+        </div>
+
+        <div class="item" onclick="abrirVisor('videos/after.mp4', 'video', 
+            `19/10/2025 – After bellaqueo 💋<br><br>
+            Tras unos apasionados e intensos momentos, pues un poquito de Nintendo por qué no.<br><br>
+            Este vídeo me hace mucha gracia, pero también refleja en cierto modo cómo somos nosotros. <br><br>
+            Cabe destacar el comentario final, mucha razón nada más que añadir.`)">
+            <video>
+                <source src="videos/after.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="item" onclick="abrirVisor('videos/sex.mp4', 'video', 
+            `19/10/2025 – After bellaqueo vol.2 🥵<br><br>
+            La verdad que no podemos estar más buenos, menuda parejaza.<br><br>
+            Una semana antes de que empezásemos a ser novios, se me escapó esa sorpresa así tímidamente. <br><br>
+            A ver si vuelves otro día a mi casita jejej.`)">
+            <video>
+                <source src="videos/sex.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="item" onclick="abrirVisor('videos/clasico.mp4', 'video', 
+            `26/10/2025 – El día ❤️<br><br>
+            El Real Madrid ganando un clásico, simplemente la buena vida.<br><br>
+            Ese día fue la primera vez que comiste en casa con mi mami, después de una tartita de queso. <br><br>
+            Después de ese partido, no hace falta que cuente lo que pasó jiji.`)">
+            <video>
+                <source src="videos/clasico.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="item" onclick="abrirVisor('img/duko.jpeg', 'foto', 
+            `29/10/2025 – Dukoooooooo 🤟🏻<br><br>
+            Es el fakin duko u know, ya supiste mami.<br><br>
+            Nuestro primer concierto juntos, y con el número 1, mejor imposible. Espero que vayamos a muchos conciertos más juntitos jiji.<br><br>
+            Además conociste a Nei, saludito para ella ya de paso.`)">
+            <img src="img/duko.jpeg">
+        </div>
+
+        <div class="item" onclick="abrirVisor('img/sol.jpeg', 'foto', 
+            `30/11/2025 – Nuestra primra Navidad 🎄<br><br>
+            Celebrando nuestras primeras navidades juntitossssss.<br><br>
+            Vueltecita de luces por Sol y por Nuevos Ministerios, disfrutando las vistas con el amor de mi vida.`)">
+            <img src="img/sol.jpeg">
+        </div>
+
+        <div class="item" onclick="abrirVisor('img/torrejon.jpeg', 'foto', 
+            `04/12/2025 – Las mágicas navidades de Torrejón 🎇<br><br>
+            Un recorrido prechiocho con una mujer prechiocha.<br><br>
+            Aunque no estuvimos mucho allí, porque luego nos fuimos al Oasiz, pero fue muy bonito.<br><br>
+            La verdad que me parece una foto muy chuli jiji.`)">
+            <img src="img/torrejon.jpeg">
+        </div>
+
+        <div class="item" onclick="abrirVisor('img/camita.jpeg', 'foto', 
+            `24/01/2026 – Mi dormilona favorita 💤<br><br>
+            Aquí se puede apreciar cuál podría ser tu hobbie favorito, dormir.<br><br>
+            Creo que uno sale más favorecido que otro, no sé por qué tengo esa sensación. <br><br>
+            Nuestra primera vez durmiendo juntitos, sin duda un fin de semana que siempre guardaré con mucho cariño.`)">
+            <img src="img/camita.jpeg">
+        </div>
+
+        <div class="item" onclick="abrirVisor('videos/perros.mp4', 'video', 
+            `24/01/2026 – Nini & Mia 🐶<br><br>
+            Paseando a las perritasssssss, la verdad que me hizo ilusión.<br><br>
+            Ya tengo experiencia para cuando tengaMOS a nuestros perretes. <br><br>
+            Por cierto, la próxima vez que sea más disimulado lo de enseñarme el culo, que menudo canteo de verdad...`)">
+            <video>
+                <source src="videos/perros.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="item" onclick="abrirVisor('img/recreativos.jpeg', 'foto', 
+            `24/01/2026 – Los gamers 👾<br><br>
+            Tintito y cervecita primes para jugar a un jueguito que bueno no sabría describirlo.<br><br>
+            Podríamos haber jugado más al tenis, pero alguien no podía aceptar la humillación que se iba a llevar. <br><br>
+            Y después fuimos al legendario casino, el cual tenía demasiadas cámaras, no diré nada más.`)">
+            <img src="img/recreativos.jpeg">
+        </div>
+
+        <div class="item" onclick="abrirVisor('videos/dientes.mp4', 'video', 
+            `08/02/2026 – Bailecito pal cuerpo 💃🏻<br><br>
+            Menudo arte que tenemos, pronto estaremos en Got Talent.<br><br>
+            Además menudo regalito te llevas de mi parte, un toque extra para nuestro baile. <br><br>
+            La verdad que me hace mucha gracia este vídeo, somos unos seres curiosos.`)">
+            <video>
+                <source src="videos/dientes.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const usuario = localStorage.getItem("usuario");
+    const mostrar = sessionStorage.getItem("mostrarBienvenida");
+    const bienvenida = document.getElementById("bienvenida");
+
+    if (!usuario || !mostrar) return;
+
+    if (usuario === "luchi") {
+        bienvenida.innerText = "Bienvenida amorchito 👋🏻";
+    } else if (usuario === "sergio") {
+        bienvenida.innerText = "Bienvenido chaval 👋🏻";
+    }
+
+    bienvenida.classList.remove("oculto");
+    bienvenida.classList.add("aparecer");
+
+    // IMPORTANTE: borrar la marca para que F5 no la vuelva a mostrar
+    sessionStorage.removeItem("mostrarBienvenida");
+
+    // desaparecer a los 4 segundos
+    setTimeout(() => {
+        bienvenida.classList.remove("aparecer");
+        bienvenida.classList.add("desaparecer");
+    }, 4000);
+
+    // ocultar del todo
+    setTimeout(() => {
+        bienvenida.classList.add("oculto");
+        bienvenida.classList.remove("desaparecer");
+    }, 4400);
+});
+</script>
+
+<script>
+let album = [];
+let indiceActual = 0;
+
+document.querySelectorAll(".item").forEach((item, index) => {
+    const onclick = item.getAttribute("onclick");
+    const datos = onclick.match(/abrirVisor\(([\s\S]*)\)/)[1];
+    album.push(eval("[" + datos + "]"));
+
+    item.onclick = () => {
+        indiceActual = index;
+        mostrarElemento();
+    };
+});
+
+function mostrarElemento() {
+    const [src, tipo, texto] = album[indiceActual];
+    const visor = document.getElementById("visor");
+    const media = document.getElementById("visor-media");
+    const descripcion = document.getElementById("visor-texto");
+
+    media.innerHTML = "";
+
+    if (tipo === "foto") {
+        media.innerHTML = `<img src="${src}">`;
+    } else {
+        media.innerHTML = `
+            <video controls autoplay>
+                <source src="${src}" type="video/mp4">
+            </video>
+        `;
+    }
+
+    descripcion.innerHTML = texto;
+    visor.classList.remove("oculto");
+}
+
+function cerrarVisor() {
+    document.getElementById("visor").classList.add("oculto");
+    document.getElementById("visor-media").innerHTML = "";
+}
+
+function siguiente() {
+    indiceActual = (indiceActual + 1) % album.length;
+    mostrarElemento();
+}
+
+function anterior() {
+    indiceActual = (indiceActual - 1 + album.length) % album.length;
+    mostrarElemento();
+}
+
+document.addEventListener("keydown", e => {
+    if (document.getElementById("visor").classList.contains("oculto")) return;
+
+    if (e.key === "ArrowRight") siguiente();
+    if (e.key === "ArrowLeft") anterior();
+    if (e.key === "Escape") cerrarVisor();
+});
+</script>
+
+<script>
+const contenedor = document.querySelector(".corazones");
+
+const NUM_CORAZONES = window.innerWidth < 768 ? 12 : 20;
+
+for (let i = 0; i < NUM_CORAZONES; i++) {
+    const corazon = document.createElement("span");
+    corazon.classList.add("corazon");
+    const corazones = ["❤️", "💖", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤎", "🤍"];
+    corazon.innerText = corazones[Math.floor(Math.random() * corazones.length)];
+
+    const size = Math.random() * 20 + 15;
+    corazon.style.fontSize = size + "px";
+
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.animationDuration = Math.random() * 10 + 10 + "s";
+    corazon.style.animationDelay = Math.random() * 10 + "s";
+
+    contenedor.appendChild(corazon);
+}
+</script>
+
+</body>
+</html>

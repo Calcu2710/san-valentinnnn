@@ -1,0 +1,849 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(#fff5ec, #f8c8dc);
+    color: #5a2a41;
+    text-align: center;
+}
+
+header {
+    padding: 30px;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+}
+
+nav a {
+    background: #e75480;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #c7436d;
+    transform: scale(1.05);
+}
+
+.seccion {
+    padding: 40px;
+}
+
+.oculto {
+    display: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.grid img:hover {
+    transform: scale(1.05);
+}
+
+figure video,
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+figure video {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* Carta */
+.carta {
+    background: #fff;
+    max-width: 600px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+}
+
+/* LOGIN */
+.login-container {
+    background: #fff;
+    max-width: 350px;
+    margin: 100px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.login-container h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    margin-bottom: 20px;
+}
+
+.login-container select,
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.login-container button {
+    background: #e75480;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background: #c7436d;
+    transform: scale(1.05);
+}
+
+.error {
+    color: #e75480;
+    margin-top: 10px;
+}
+
+.login-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #5a2a41;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fecha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.fecha-container input {
+    width: 70px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.fecha-container span {
+    font-size: 1.2em;
+    color: #5a2a41;
+}
+
+.bienvenida {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e75480;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
+    font-size: 1.1em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 2000;
+}
+
+/* Animaciones */
+.aparecer {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.desaparecer {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+.oculto {
+    display: none;
+}
+
+figure video {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .carta {
+        padding: 25px;
+        font-size: 1.3em;
+    }
+
+    .login-container {
+        margin: 40px 15px;
+        padding: 30px;
+    }
+
+    .fecha-container {
+        flex-wrap: wrap;
+    }
+
+    .fecha-container input {
+        width: 80px;
+    }
+
+}
+
+/* GALERÍA */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.item {
+    cursor: pointer;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.item img,
+.item video {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* VISOR */
+.visor {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.visor-contenido {
+    background: white;
+    max-width: 900px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.visor-media img,
+.visor-media video {
+    max-width: 100%;
+    max-height: 70vh;   /* 🔑 clave para verticales */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.visor-texto {
+    font-size: 1.1em;
+    color: #5a2a41;
+    display: flex;
+    align-items: center;
+    line-height: 1.6;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* CERRAR */
+.visor .cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #e75480;
+}
+
+/* MÓVIL: visor en columna */
+@media (max-width: 768px) {
+    .visor-contenido {
+        grid-template-columns: 1fr;
+    }
+}
+
+.oculto {
+    display: none;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(231,84,128,0.9);
+    color: white;
+    border: none;
+    font-size: 2.5em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 4000;
+}
+
+.nav.prev {
+    left: -25px;
+}
+
+.nav.next {
+    right: -25px;
+}
+
+.nav:hover {
+    background: #c7436d;
+}
+
+/* En móvil, más discretos */
+@media (max-width: 768px) {
+    .nav {
+        width: 40px;
+        height: 40px;
+        font-size: 2em;
+    }
+}
+
+/* =========================
+   CIELOS
+========================= */
+.texto-cielos {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6em;
+    line-height: 1.6;
+    color: #5a2a41;
+}
+
+/* =========================
+   CIELOS VERTICALES
+========================= */
+
+.galeria-cielos .item img {
+    height: auto;              /* 🔑 que no recorte */
+    max-height: 420px;         /* tamaño bonito */
+    width: 100%;
+    object-fit: contain;       /* 🔑 se ve entera */
+    background: rgba(255,255,255,0.4);
+}
+
+/* Opcional: que respiren más */
+.galeria-cielos .item {
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* capa nube */
+.galeria-cielos .item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 30%,
+        rgba(255,255,255,0.4) 50%,
+        rgba(255,255,255,0) 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 1.5s ease;
+}
+
+/* al pasar el ratón */
+.galeria-cielos .item:hover::after {
+    transform: translateX(100%);
+}
+
+/* ligero aclarado */
+.galeria-cielos .item:hover img {
+    filter: brightness(1.05);
+}
+
+/* =========================
+   TEST
+========================= */
+
+.test {
+    max-width: 700px;
+    margin: auto;
+}
+
+.pregunta {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.pregunta p {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.pregunta label {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.pregunta input {
+    margin-right: 10px;
+}
+
+/* hover */
+.pregunta label:hover {
+    background: #f8c8dc;
+}
+
+/* opción seleccionada */
+.pregunta input:checked + span,
+.pregunta input:checked {
+    accent-color: #e75480;
+}
+
+/* TEST RESULTADOS */
+.correcta {
+    background: #d4f5d4;
+    border: 2px solid #5cb85c;
+}
+
+.incorrecta {
+    background: #f8d7da;
+    border: 2px solid #dc3545;
+}
+
+.resultado {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* BOTONES TEST */
+.botones-test {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.botones-test button {
+    background: #e75480;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botones-test button:hover {
+    background: #c7436d;
+    transform: scale(1.05);
+}
+
+.resultado-final {
+    margin-top: 30px;
+    font-size: 1.4em;
+    font-family: 'Dancing Script', cursive;
+    color: #5a2a41;
+}
+
+/* =========================
+   AJUSTES MOBILE REALES
+========================= */
+@media (max-width: 480px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 0 10px;
+    }
+
+    .seccion {
+        padding: 20px 15px;
+    }
+
+    /* NAV */
+    nav a {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    /* CARTA */
+    .carta {
+        padding: 20px;
+        font-size: 1.2em;
+    }
+
+    /* LOGIN */
+    .login-container {
+        margin: 20px 10px;
+        padding: 25px;
+    }
+
+    .fecha-container input {
+        width: 65px;
+    }
+
+    /* GALERÍA */
+    .item img,
+    .item video {
+        height: 220px;
+    }
+
+    /* VISOR */
+    .visor-contenido {
+        padding: 15px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .visor-texto {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-top: 10px;
+    }
+
+    /* FLECHAS */
+    .nav {
+        width: 36px;
+        height: 36px;
+        font-size: 1.8em;
+    }
+
+    .nav.prev {
+        left: 5px;
+    }
+
+    .nav.next {
+        right: 5px;
+    }
+
+    /* TEST */
+    .pregunta {
+        padding: 20px;
+    }
+
+    .pregunta p {
+        font-size: 1.2em;
+    }
+
+    .botones-test {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .botones-test button {
+        width: 100%;
+    }
+
+    /* CIELOS */
+    .texto-cielos {
+        font-size: 1.4em;
+        padding: 0 10px;
+    }
+
+    .galeria-cielos .item img {
+        max-height: 350px;
+    }
+}
+
+/* =========================
+   SPOTIFY RESPONSIVE FIX
+========================= */
+
+/* =========================
+   MÚSICA – SPOTIFY
+========================= */
+
+.spotify-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-width: 800px;   /* 🔑 ancho bonito en PC */
+    margin: 0 auto;
+}
+
+.spotify-container iframe {
+    width: 100%;
+    height: 800px;       /* 🔑 aspecto horizontal en PC */
+    border-radius: 15px;
+    border: none;
+}
+
+/* =========================
+   MÓVIL / TABLET
+========================= */
+
+@media (max-width: 768px) {
+    .spotify-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .spotify-container iframe {
+        height: 450px;   /* más alto en móvil */
+    }
+}
+
+/* MÓVIL PEQUEÑO */
+@media (max-width: 480px) {
+    .spotify-container iframe {
+        height: 520px;
+    }
+}
+
+/* =========================
+   CORAZONES DE FONDO
+========================= */
+
+.corazones {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none; /* 🔑 no molesta */
+}
+
+.corazon {
+    position: absolute;
+    bottom: -50px;
+    color: rgba(231, 84, 128, 0.4);
+    font-size: 20px;
+    animation: flotar linear infinite;
+}
+
+/* Animación */
+@keyframes flotar {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Ajuste móvil (menos corazones) */
+@media (max-width: 768px) {
+    .corazon {
+        font-size: 16px;
+    }
+}
+
+/* Aseguramos que el contenido esté encima */
+header,
+section,
+.login-container,
+.carta,
+.test,
+.spotify-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   VISOR – AJUSTE SOLO EN MÓVIL
+========================= */
+@media (max-width: 600px) {
+
+    .visor-contenido {
+        padding: 15px;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    .visor-media img,
+    .visor-media video {
+        max-height: 45vh;   /* 🔑 clave: antes era 70vh */
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .visor-texto {
+        font-size: 1em;
+        margin-top: 10px;
+    }
+}
+
+/* =========================
+   VISOR – AJUSTES SOLO MÓVIL
+========================= */
+@media (max-width: 600px) {
+
+    .visor-contenido {
+        grid-template-columns: 1fr;   /* una sola columna */
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .visor-media {
+        display: flex;
+        justify-content: center;
+    }
+
+    .visor-media img,
+    .visor-media video {
+        max-height: 55vh;              /* 🔑 evita que sea enorme */
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .visor-texto {
+        text-align: center;            /* 🔑 centrado solo en móvil */
+        justify-content: center;
+        font-size: 1.05em;
+        padding: 10px 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav {
+        width: 55px;
+        height: 55px;
+        font-size: 2.4em;
+    }
+
+    .nav.prev {
+        left: -30px;
+    }
+
+    .nav.next {
+        right: -30px;
+    }
+}
+
+/* =========================
+   FLECHAS – AJUSTE SOLO MÓVIL
+========================= */
+@media (max-width: 600px) {
+
+    .nav {
+        width: 55px;
+        height: 55px;
+        font-size: 2.4em;
+        opacity: 0.9;
+    }
+
+    .nav.prev {
+        left: 10px;        /* 🔑 dentro del visor */
+    }
+
+    .nav.next {
+        right: 10px;       /* 🔑 dentro del visor */
+    }
+}

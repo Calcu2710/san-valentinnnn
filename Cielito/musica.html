@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎶 Nuestra música</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="corazones"></div>
+
+<header>
+    <h1>🎶 Nuestra música 🎶</h1>
+    <nav>
+        <a href="momentos.html">📷 Momentos</a>
+        <a href="cartita.html">💌 Cartita</a>
+        <a href="cielos.html">☁️ Cielos</a>
+        <a href="musica.html">🎶 Música</a>
+        <a href="test.html">📝 Test</a>
+    </nav>
+</header>
+
+<section class="seccion musica">
+    <p class="texto-musica">
+        Ya sabes que lo que más hago en mi vida, además de amarte, es escuchar música como un completo psicópata.<br>
+        Por ello, he creado esta playlist con canciones que me recuerdan a ti. 💕<br>
+        (Aquí salen 100, pero son más jeje)
+    </p>
+
+    <div class="spotify-container">
+        <!-- AQUÍ VA TU PLAYLIST -->
+        <iframe
+            src="https://open.spotify.com/embed/playlist/7mmOOWe2scPGLLlN0T9NXX?si=2d3077f143b14e62"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<script>
+const contenedor = document.querySelector(".corazones");
+
+const NUM_CORAZONES = window.innerWidth < 768 ? 12 : 20;
+
+for (let i = 0; i < NUM_CORAZONES; i++) {
+    const corazon = document.createElement("span");
+    corazon.classList.add("corazon");
+    const corazones = ["❤️", "💖", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤎", "🤍"];
+    corazon.innerText = corazones[Math.floor(Math.random() * corazones.length)];
+
+    const size = Math.random() * 20 + 15;
+    corazon.style.fontSize = size + "px";
+
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.animationDuration = Math.random() * 10 + 10 + "s";
+    corazon.style.animationDelay = Math.random() * 10 + "s";
+
+    contenedor.appendChild(corazon);
+}
+</script>
+
+</body>
+</html>

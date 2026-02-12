@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Acceso 💖</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+
+<div class="login-container">
+    <h1>💕 Holi 💕</h1>
+    <p>Para continuar, inicia sesión</p>
+
+    <form onsubmit="return comprobarLogin()">
+        <select id="usuario" required>
+            <option value="" disabled selected>¿Quién es usted?</option>
+            <option value="sergio">Sergio 🤍</option>
+            <option value="luchi">Luchi 💗</option>
+        </select>
+
+        <label class="login-label">¿Cuándo empezamos a ser novios?</label>
+
+        <div class="fecha-container">
+            <input type="text" id="dia" placeholder="DD" required>
+            <span>/</span>
+            <input type="text" id="mes" placeholder="MM" required>
+            <span>/</span>
+            <input type="text" id="año" placeholder="AAAA" required>
+        </div>
+
+        <button type="submit">Entrar 💖</button>
+        <p id="error" class="error"></p>
+    </form>
+</div>
+
+<script>
+function comprobarLogin() {
+    const usuario = document.getElementById("usuario").value;
+    const dia = document.getElementById("dia").value;
+    const mes = document.getElementById("mes").value;
+    const año = document.getElementById("año").value;
+
+    if (
+        (usuario === "sergio" || usuario === "luchi") &&
+        dia === "26" &&
+        mes === "10" &&
+        año === "2025"
+    ) {
+        localStorage.setItem("usuario", usuario);
+        sessionStorage.setItem("mostrarBienvenida", "true");
+        window.location.href = "momentos.html";
+    } else {
+        document.getElementById("error").innerText =
+            "Esa no es nuestra fecha 💔";
+    }
+
+    return false;
+}
+</script>
+
+</body>
+</html>

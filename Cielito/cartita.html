@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Cartita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="corazones"></div>
+
+<header>
+    <h1>💌 Mi cartita para mi amorchito 💌</h1>
+    <nav>
+        <a href="momentos.html">📷 Momentos</a>
+        <a href="cartita.html">💌 Cartita</a>
+        <a href="cielos.html">☁️ Cielos</a>
+        <a href="musica.html">🎶 Música</a>
+        <a href="test.html">📝 Test</a>
+    </nav>
+</header>
+
+<section class="seccion">
+    <div class="carta">
+        <p>
+            Mi amorchito.<br><br>
+            Aunque esta fecha no te parezca tan importante, para mí es una manera de celebrar el hecho de poder haber encontrado a una persona a la que amo con toda mi alma.<br><br>
+            Siendo totalmente sincero, nunca me habría imaginado encontrar a una persona como tú, que me quiera tantísimo siendo como soy, sin sentirme juzgado y pudiendo expresarme como yo soy.<br><br>
+            Te quiero agradecer que seas mi mujer, mi compañera de vida diaria, mi mayor apoyo para todo lo que hago, por todo.<br><br>
+            Amo absolutamente todo de ti, tu personalidad, tu físico, tu cara preciosa, tu manera de quererme, tu sonrisa, absolutamente todo.<br><br>
+            De verdad que estoy tan enamorado de ti que no puedo explicarlo, pero sé que nunca me cansaré de amarte como lo hago.<br><br>
+            Quiero estar contigo toda la vida, y en cualquier otra vida si la hay, quiero vivir todas las etapas de la vida y crecer a tu lado.<br><br>
+            Puede que a veces haya etapas en las que no estemos tan bien como nos gustaría estar siempre, pero no tengo ninguna duda de que, pase lo que pase, lucharemos para afrontarlo para que sigamos estando súper felices juntos.<br><br>
+            No me imagino pasar mis días sin estar contigo, ya eres una parte de mi corazón que no quiero que se borre nunca.<br><br>
+            Te amo mucho cielo, eres el mejor regalo que me ha podido dar la vida.<br><br>
+            Gracias por existir, por quedarte y por hacerme tan feliz.<br><br>
+            <br><br>
+            🤍 Siempre tuyo 🤍
+        </p>
+    </div>
+</section>
+
+<script>
+const contenedor = document.querySelector(".corazones");
+
+const NUM_CORAZONES = window.innerWidth < 768 ? 12 : 20;
+
+for (let i = 0; i < NUM_CORAZONES; i++) {
+    const corazon = document.createElement("span");
+    corazon.classList.add("corazon");
+    const corazones = ["❤️", "💖", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤎", "🤍"];
+    corazon.innerText = corazones[Math.floor(Math.random() * corazones.length)];
+
+    const size = Math.random() * 20 + 15;
+    corazon.style.fontSize = size + "px";
+
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.animationDuration = Math.random() * 10 + 10 + "s";
+    corazon.style.animationDelay = Math.random() * 10 + "s";
+
+    contenedor.appendChild(corazon);
+}
+</script>
+
+</body>
+</html>
